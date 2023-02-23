@@ -1,8 +1,8 @@
 const express = require("express")
 const app = express()
 const port = 3000
-const user = require('./routers/userRouter')
-const fruit = require('./routers/fruitRouter')
+const users = require('./routers/usersRouter')
+const fruits = require('./routers/fruitsRouter')
 
 // List of Users
 let users = [
@@ -46,10 +46,10 @@ let fruits = [
 
 // Express Routes
 app.use(express.json());
-app.use('/user', user);
-app.use('/user/:id', user);
-app.use('/fruit', fruit);
-app.use('/fruit/:id', fruit);
+app.use('/users', users);
+app.use('/users/:id', users);
+app.use('/fruits', fruits);
+app.use('/fruits/:id', fruits);
 
 
 

@@ -35,18 +35,27 @@ router.get('/:id', (req, res) => {
 })
 
 // POST fruits route
-app.use(express.json())
-router.post('/', [check("color").not().isEmpty().trim()], (req, res) => {
-    // let newFruit = {name: "Mango", color: "Green"};
-    // newFruit = req.body;
+router.post("/", [check("color").not().isEmpty().trim()], (req, res) => {
     const errors = validationResult(req);
-    if(!errors.isEmpty()){
-        res.json({error: errors.array()});
+    if (!errors.isEmpty()) {
+      res.json({ error: errors.array() });
     } else {
         fruits.push(req.body);
-        res.json(fruits);
+        res.json("Post Success!");
     }
-})
+  });
+// app.use(express.json())
+// router.post('/', [check("color").not().isEmpty().trim()], (req, res) => {
+//     // let newFruit = {name: "Mango", color: "Green"};
+//     // newFruit = req.body;
+//     const errors = validationResult(req);
+//     if(!errors.isEmpty()){
+//         res.json({error: errors.array()});
+//     } else {
+//         fruits.push(req.body);
+//         res.json(fruits);
+//     }
+// })
 
 // PUT fruits route
 router.put('/:id', (req, res) => {
