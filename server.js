@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 const port = 3000
+const user = require('./routers/userRouter')
 
 // List of Users
 let users = [
@@ -43,7 +44,8 @@ let fruits = [
 ]
 
 // Express Routes
-
+app.use('/user', userRouter);
+app.use('/user/:id', userRouter);
 
 
 
