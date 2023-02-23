@@ -45,6 +45,7 @@ let fruits = [
 ]
 
 // Express Routes
+app.use(express.json());
 app.use('/user', user);
 app.use('/user/:id', user);
 app.use('/fruit', fruit);

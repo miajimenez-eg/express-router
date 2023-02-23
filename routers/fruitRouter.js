@@ -31,3 +31,5 @@ router.get('/:id', (req, res) => {
     const getFruit = fruits[id - 1];
     res.json(getFruit);
 })
+
+module.exports = router;
