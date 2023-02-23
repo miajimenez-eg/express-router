@@ -39,8 +39,8 @@ router.post('/', [check("name").not().isEmpty().trim()], (req, res) => {
     if(!errors.isEmpty()){
         res.json({error: errors.array()})
     } else {
-        const newUser = {name: "User 5", age: 21}
-        users.push(newUser);
+        // const newUser = {name: "User 5", age: 21}
+        users.push(req.body);
         res.json(users);
     }
 })
