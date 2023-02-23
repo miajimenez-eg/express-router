@@ -32,4 +32,28 @@ router.get('/:id', (req, res) => {
     res.json(getFruit);
 })
 
+// POST fruits route
+router.post('/', (req, res) => {
+    let newFruit = {name: "Mango", color: "Green"};
+    fruits.push(newFruit);
+    res.json(fruits);
+})
+
+// PUT fruits route
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const index = id - 1;
+    fruits[index].name = "Pomegranate";
+    fruits[index].color = "Red";
+    res.json(fruits);
+})
+
+// DELETE fruits route
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    const index = id - 1;
+    fruits.splice(index, 1);
+    res.json(fruits);
+})
+
 module.exports = router;
