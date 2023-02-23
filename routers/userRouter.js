@@ -32,4 +32,29 @@ router.get('/:id', (req, res) => {
     res.json(findUser);
 })
 
+// POST users route
+router.post('/', (req, res) => {
+    const newUser = {name: "User 5", age: 21}
+    users.push(newUser);
+    res.json(users);
+})
+
+// PUT users route
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const index = id - 1;
+    users[index].name = "User 6";
+    users[index].age = 34;
+    res.json(users);
+})
+
+// DELETE users route
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    const index = id - 1;
+    users.splice(index, 1);
+    res.json(users);
+})
+
+
 module.exports = router;
