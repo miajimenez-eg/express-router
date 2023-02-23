@@ -45,10 +45,10 @@ let fruits = [
 ]
 
 // Express Routes
-app.use('/user', userRouter);
-app.use('/user/:id', userRouter);
-app.use('/fruit', fruitRouter);
-app.use('/fruit/:id', fruitRouter);
+app.use('/user', user);
+app.use('/user/:id', user);
+app.use('/fruit', fruit);
+app.use('/fruit/:id', fruit);
 
 
 
